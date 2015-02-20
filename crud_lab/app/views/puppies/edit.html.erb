@@ -1,0 +1,24 @@
+<h1>Edit <%= @puppy.name %></h1>
+
+<%= form_for @puppy, url:"/puppies/#{@puppy.id}", method:"PUT" do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, autofocus: true %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+
+  <%= f.submit %>
+<% end %>
+
+  <% if @puppy.errors.any?%>
+    <% @puppy.errors.full_messages.each do |error|%>
+      <p class="text-danger">
+        <%= error %>
+      </p>
+    <% end%>
+  <% end %>
+
+<%= link_to "Delete Puppy","/puppies/#{@puppy.id}", method: "Delete" %>

@@ -1,0 +1,15 @@
+<h1>Showing Puppy</h1>
+
+<p>
+  <%= @puppy.name %>
+</p>
+
+<p>
+  <%= @puppy.age %>
+</p>
+
+<p>
+  <%= @puppy.breed %>
+</p>
+
+<%= link_to "Edit", "/puppies/#{@puppy.id}/edit" %>

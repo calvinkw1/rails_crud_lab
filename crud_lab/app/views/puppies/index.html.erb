@@ -1,0 +1,13 @@
+<h1>Showing all puppies!</h1>
+
+<% @puppies.each do |puppy| %>
+  <p>
+    <%= link_to puppy.name, "puppies/#{puppy.id}" %>
+    <%= link_to "Edit", "puppies/#{puppy.id}/edit" %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to "Add New Puppy!", "puppies/new" %>
+</p> 
+
